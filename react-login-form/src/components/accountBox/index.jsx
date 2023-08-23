@@ -17,8 +17,10 @@ const BoxContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 567px) {
-    min-height:100vh;
+    // min-height:110vh;
     width: 420px;
+    background-color:darkslategrey;
+  border-radius: 0px;
   }
 `;
 
@@ -34,7 +36,7 @@ const TopContainer = styled.div`
 
 const BackDrop = styled(motion.div)`
   position: absolute;
-  width: 160%;
+  width: 460%;
   height: 550px;
   display: flex;
   flex-direction: column;
@@ -50,8 +52,15 @@ const BackDrop = styled(motion.div)`
     border-radius:50%;
     transform: rotate(60deg);
     height:100vh;
-    left:-30px;
-    top:-240px;
+    left:10px;
+    top:-250px;
+
+    .collapsed{
+      width: 108%,
+      height: 610px,
+      borderRadius: 50%,
+      transform: rotate(-122deg)
+    }
   }
 
   
@@ -93,9 +102,9 @@ const InnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0px 20px;
-
   @media (max-width: 567px) {
     padding: 170px 40px;
+    backgroung-color:black;
   }
   
 `;
@@ -109,12 +118,11 @@ const backdropVariants = {
     transform: "rotate(60deg)"
   },
   collapsed: {
-    width: "160%",
-    height: "550px",
+    width: (window.innerWidth>567)? "160%":"98%",
+    height: (window.innerWidth>567)?"550px":"620px",
     borderRadius: "50%",
-    transform: "rotate(60deg)"
-  },
-  
+    transform:(window.innerWidth>567)? "rotate(60deg)":"rotate(-102deg)"
+  }
 }
 
 const expandingTransition = {
@@ -152,21 +160,23 @@ export default function AccountBox(props) {
   
   return (
   <AccountContext.Provider value={contextValue}>
-  <BoxContainer>
+  <BoxContainer className='boxContainer'>
     <TopContainer>
       <BackDrop 
         initial={false}
         animate={isExpanded ? "expanded" : "collapsed"}
         variants={backdropVariants}
         transition={expandingTransition}
-      />
+      >
+        
+      </BackDrop>
       {active === "signin" && <HeaderContainer>
-        <HeaderText>Welcome</HeaderText>
+        <HeaderText className='headingText'>Welcome</HeaderText>
         <HeaderText>Back</HeaderText>
         <SmallText>Please sign-in to continue!</SmallText>
       </HeaderContainer>}
       {active === "signup" && <HeaderContainer>
-        <HeaderText>Create</HeaderText>
+        <HeaderText className='headingText'>Create</HeaderText>
         <HeaderText>Account</HeaderText>
         <SmallText>Please sign-up to continue!</SmallText>
       </HeaderContainer>}
