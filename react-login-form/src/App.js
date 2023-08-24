@@ -15,7 +15,7 @@ const AppContainer = styled.div`
 `;
 
 export default function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
@@ -27,12 +27,11 @@ export default function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <>
-        <GlobalStyles/>
-          <AppContainer>
-            <AccountBox />
-            {/* <button onClick={toggleTheme}>Toggle theme</button>
-            <p>{window.innerWidth}</p> */}
-          </AppContainer>
+        <GlobalStyles />
+        <AppContainer>
+          <AccountBox />
+          <input type="checkbox" id="switch" onClick={toggleTheme} /><label for="switch">Toggle</label>
+        </AppContainer>
       </>
     </ThemeProvider>
   )

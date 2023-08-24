@@ -15,7 +15,7 @@ export const FormContainer = styled.form`
 `;
 
 export const MutedLink = styled.a`
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(200, 200, 200, 0.8);
   font-weight: 500;
   text-decoration: none;
@@ -26,7 +26,7 @@ export const MutedLink = styled.a`
 `;
 
 export const BoldLink = styled.a`
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(31, 135, 75, 0.8);
   font-weight: 500;
   text-decoration: none;
@@ -39,13 +39,14 @@ export const BoldLink = styled.a`
 
 export const Input = styled.input`
   width: 100%;
-  height: 42px;
+  font-size: 14px;
+  height: 50px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.3);
   border-radius: 5px;
-  padding: 0px 10px;
+  padding: 0px 15px;
   transition: all 200ms ease-in-out;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 
   &::placeholder {
     color: rgba(200, 200, 200, 1);
@@ -63,7 +64,7 @@ export const SubmitButton = styled.button`
   max-width: 150px;
   padding: 10px;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   border: none;
   border-radius: 100px;
@@ -79,7 +80,7 @@ export const SubmitButton = styled.button`
 `;
 
 export const LineText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(200, 200, 200, 0.8);
   font-weight: 500;
   @media (max-width: 567px) {

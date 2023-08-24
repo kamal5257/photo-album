@@ -6,19 +6,18 @@ import { motion } from 'framer-motion';
 import { AccountContext } from './accountContext'
 
 const BoxContainer = styled.div`
-  width: 280px;
-  min-height: 550px;
+  width: 430px;
+  min-height: 750px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
   background-color: #fff;
-  box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
 
   @media (max-width: 567px) {
-    // min-height:110vh;
-    width: 420px;
+    height:100%;
+    width: 100%;
     background-color:darkslategrey;
   border-radius: 0px;
   }
@@ -42,7 +41,7 @@ const BackDrop = styled(motion.div)`
   flex-direction: column;
   border-radius: 50%;
   top: -290px;
-  left: -70px;
+  left: -205px;
   transform: rotate(60deg);
   background: linear-gradient(
     58deg, rgba(31, 135, 75, 0.8) 25%, rgba(0,255,0,0.3) 100%
@@ -101,7 +100,7 @@ const InnerContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0px 20px;
+  padding: 141px 40px;
   @media (max-width: 567px) {
     padding: 170px 40px;
     backgroung-color:black;
@@ -118,10 +117,10 @@ const backdropVariants = {
     transform: "rotate(60deg)"
   },
   collapsed: {
-    width: (window.innerWidth>567)? "160%":"98%",
-    height: (window.innerWidth>567)?"550px":"620px",
+    width: (window.innerWidth>567)? "190%":"98%",
+    height: (window.innerWidth>567)?"565px":"620px",
     borderRadius: "50%",
-    transform:(window.innerWidth>567)? "rotate(60deg)":"rotate(-102deg)"
+    transform:(window.innerWidth>567)? "rotate(-10deg)":"rotate(-102deg)"
   }
 }
 
